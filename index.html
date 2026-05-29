@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayansh NGO | Transforming Lives</title>
+    <style>
+        /* Modern Reset & Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        :root {
+            --primary: #2ca6a4; /* Deep Teal */
+            --secondary: #ff7a59; /* Warm Coral */
+            --dark: #2d3748;
+            --light: #f7fafc;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        header {
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        .donate-btn {
+            background: var(--secondary);
+            color: white !important;
+            padding: 8px 20px;
+            border-radius: 20px;
+            transition: background 0.3s !important;
+        }
+        .donate-btn:hover {
+            background: #e06343 !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 166, 164, 0.8), rgba(45, 55, 72, 0.9)), url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200') no-repeat center center/cover;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .hero-content p {
+            font-size: 20px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            box-shadow: 0 4px 15px rgba(255, 122, 89, 0.4);
+        }
+
+        /* Sections General */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+            margin: 10px auto 0;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        /* Causes Section */
+        .causes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .cause-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .cause-card:hover {
+            transform: translateY(-5px);
+        }
+        .cause-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .cause-content {
+            padding: 20px;
+        }
+        .cause-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        /* Contact Section */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* Simplified for template */
+            .hero-content h1 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Ayansh</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#causes">Our Causes</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#donate" class="donate-btn">Donate Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero" id="home">
+        <div class="hero-content">
+            <h1>Bringing Hope and Light to Lives</h1>
+            <p>At Ayansh, we believe everyone deserves a chance at a brighter future. Join us in making a sustainable impact today.</p>
+            <a href="#causes" class="cta-btn">See Our Work</a>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">Who We Are</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <h3>Our Mission</h3>
+                <p>Named after the first ray of the sun, <strong>Ayansh</strong> aims to bring a dawn of hope, education, and health to underserved communities.</p>
+                <p>Through grassroots initiatives and transparent collaboration, we target systemic challenges to empower individuals and foster long-term community resilience.</p>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=600" alt="About Ayansh" style="width:100%; border-radius:8px;">
+            </div>
+        </div>
+    </section>
+
+    <hr style="border: 0; height: 1px; background: #eee;">
+
+    <!-- Causes Section -->
+    <section id="causes">
+        <h2 class="section-title">Our Focus Areas</h2>
+        <div class="causes-grid">
+            <!-- Cause 1 -->
+            <div class="cause-card">
+                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=400" alt="Education" class="cause-img">
+                <div class="cause-content">
+                    <h3>Education for All</h3>
+                    <p>Providing books, learning materials, and modern educational infrastructure to children who need it most.</p>
+                </div>
+            </div>
+            <!-- Cause 2 -->
+            <div class="cause-card">
+                <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=400" alt="Healthcare" class="cause-img">
+                <div class="cause-content">
+                    <h3>Healthcare & Nutrition</h3>
+                    <p>Organizing free medical checkup camps and distributing nutritional supplies to remote villages.</p>
+                </div>
+            </div>
+            <!-- Cause 3 -->
+            <div class="cause-card">
+                <img src="https://images.unsplash.com/photo-1469571486040-4b9b17591739?q=80&w=400" alt="Empowerment" class="cause-img">
+                <div class="cause-content">
+                    <h3>Women Empowerment</h3>
+                    <p>Skill development and vocational training programs designed to help women achieve financial independence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="background-color: #f0f4f8; max-width: 100%;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-form">
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">How would you like to help?</label>
+                        <textarea id="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Ayansh NGO. All Rights Reserved. | Built with 🤍 for a better tomorrow.</p>
+    </footer>
+
+</body>
+</html>
